@@ -33,7 +33,7 @@ which gives the resultant HJB:
 <img src="https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/f62b2022-cce2-4fe9-b7f1-ba0c400c41a8" width="600" height="auto">
 </div>
 
-This ansatz solution is known to converge to the viscosity solution and is unique.
+This ansatz solution along with the implicit finite different method is known to converge to the viscosity solution and is unique.
 
 To solve the HJB PDE, the Thomas Algorithm was implemented, and the optimal bid and ask spreads were calibrated to be:
 
