@@ -18,8 +18,7 @@ Then using Bellman's principle of optimality:
 $$U(t, X)=\sup _{\delta_t \in \mathcal{A}(t, X)}\left\{\mathbb{E}^{t, X}\left[\int_t^\theta L\left(s, X_s, \delta_s\right) d s+U\left(\theta, X_\theta\right)\right]\right\}$$
 And applying Ito's lemma, we get the resultant HJB:
 
-$$\begin{aligned}
-0= & V_t(t, q, \nu, X, S)+\frac{1}{2} \nu V_{S S}(t, q, \nu, X, S)+\theta(\alpha-\nu) V_\nu(t, q, \nu, X, S) \\
+$$\begin{aligned}0= & V_t(t, q, \nu, X, S)+\frac{1}{2} \nu V_{S S}(t, q, \nu, X, S)+\theta(\alpha-\nu) V_\nu(t, q, \nu, X, S) \\
 & +\frac{1}{2} \xi^2 \nu V_{\nu \nu}(t, q, \nu, X, S)+\rho \xi \nu V_{S \nu}(t, q, \nu, X, S) \\
 & +\mathbf{1}_{q<Q} \sup _{\delta_t^b}\left[\left[V\left(t, q+1, \nu+d \nu, X-S+\delta^b, S\right)-V(t, q, \nu, X, S)\right] \Lambda^b\left(\delta_t^b\right)\right], \\
 & +\mathbf{1}_{q>-Q} \sup _{\delta_t^a}\left[\left[V\left(t, q-1, \nu+d \nu, X+S+\delta^a, S\right)-V(t, q, \nu, X, S)\right] \Lambda^a\left(\delta_t^a\right)\right],
