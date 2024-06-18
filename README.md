@@ -1,8 +1,17 @@
 # Stochastic_Optimal_Control_Market_Making
 
 The limit order book (LOB) for Amazon over a 1-day period was used to calibrate a market making algorithm. The optimal bid-ask spread was calculated using optimal control where the diffusion of the stock price was stochastic volatility with 0 drift. That is:
-$$dS_t = \sqrt(v_t) dW_t$$
+$$dS_t = \sqrt{v_t} dW_t$$
 $$dv_t = \kappa(\bar{v} - v_t)dt + \eta dB_t$$
+where $W_t$ and $B_t$ are brownian motions with correlation $\rho$.
+The cash process used:
+$$dX_t = (S_t + \delta^a)dN_t^a - (S_t - \delta^b)dN_t^b$$
+where $N_t$ is a poisson random variable given by the arrival of the market orders (MO).
+
+The utility function used was:
+$$
+\mathbb{E}\left[-e^{-\gamma\left(X_T+q_T S_T-l\left(\left|q_T\right|\right)\right)}\right]
+$$
 
 
 The optimal bid and ask spreads are given by
