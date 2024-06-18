@@ -15,7 +15,7 @@ $$\mathbb{E}\left[-e^{-\gamma\left(X_T+q_T S_T-lq_T^2\right)}\right]$$
 That is, we are punished for holding inventory at the end of the trading day.
 
 Then using Bellman's principle of optimality:
-$$U(t, X)=\sup _{\delta_t \in \mathcal{A}(t, X)}\left\{\mathbb{E}^{t, X}\left[\int_t^\theta L\left(s, X_s, \delta_s\right) d s+U\left(\theta, X_\theta\right)\right]\right\}$$
+$$U(t, X)=\sup _{\delta_t \in \mathcal{A}(t, X)}\left\{\mathbb{E}^{t, X}\left[\int_t^\theta L\left(s, X_s, \delta_s\right) d s+U\left(\theta,X_\theta\right)\right]\right\}$$
 And applying Ito's lemma, we get the resultant HJB:
 
 $$
