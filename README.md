@@ -38,7 +38,7 @@ To solve the HJB PDE, the Thomas Algorithm was implemented, and the optimal bid 
 ![newplot (14)](https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/902390e6-c98a-4a7a-b053-a6a466a88bf1)
 ![newplot (15)](https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/e6370f95-5225-4acb-8d3b-d3654c60364e)
 
-Then using these optimal quotes, backtests were ran to test the efficacy. At time $t$ set bid and ask quotes given current volatility $\nu_t$ and inventory $q$. Then at time $t+1$, the stock price $S_t$ and volatility $nu_t$, evolve according to their SDEs. If the price hits the bid or ask, a 1 unit trade is executed (we do not requote until a pre-defined period, it's why in the figure below was have flat lines for the quotes). 
+Then using these optimal quotes, backtests were ran to test the efficacy. At time $t$ set bid and ask quotes given current volatility $\nu_t$ and inventory $q$. Then at time $t+1$, the stock price $S_t$ and volatility $\nu_t$, evolve according to their SDEs. If the price hits the bid or ask, a 1 unit trade is executed (we do not requote until a pre-defined period, it's why in the figure below was have flat lines for the quotes). 
 
 ![newplot (16)](https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/75c14dde-770c-4a1b-b50f-f19916458ee9)
 
