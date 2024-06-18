@@ -12,7 +12,7 @@ $$dq_t = dN^b_t - dN^a_t$$
 where $N_t$ is a poisson random variable given by the arrival of the market orders (MO), and $q_t$ is the inventory.
 
 The utility function used was:
-$$\mathbb{E}\left[-e^{-\gamma\left(X_T+q_T S_T-lq_T^2\right)}\right]$$
+$$\mathbb{E}\left[-e^{-\gamma\left(X_T+q_T S_T-\kappa q_T^2\right)}\right]$$
 
 That is, we are punished for holding inventory at the end of the trading day.
 
