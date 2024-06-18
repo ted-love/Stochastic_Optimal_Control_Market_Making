@@ -1,8 +1,8 @@
 # Stochastic_Optimal_Control_Market_Making
 
 The limit order book (LOB) for Amazon over a 1-day period was used to calibrate a market making algorithm. The optimal bid-ask spread was calculated using Hamiltonian-Jacobian-Bellman (HJB) equation where the diffusion of the stock price was stochastic volatility with 0 drift. That is:
-$$dS_t = \sqrt{v_t} dW_t$$
-$$dv_t = \kappa(\bar{v} - v_t)dt + \eta \sqrt{v_t}dB_t$$
+$$dS_t = \sqrt{\nu_t} dW_t$$
+$$d\nu_t = \kappa(\bar{\nu} - \nu_t)dt + \eta \sqrt{\nu_t}dB_t$$
 where $W_t$ and $B_t$ are brownian motions with correlation $\rho$.
 The cash process used:
 $$dX_t = (S_t + \delta^a)dN_t^a - (S_t - \delta^b)dN_t^b$$
@@ -15,20 +15,22 @@ $$\mathbb{E}\left[-e^{-\gamma\left(X_T+q_T S_T-lq_T^2\right)}\right]$$
 That is, we are punished for holding inventory at the end of the trading day.
 
 Then using Bellman's principle of optimality:
-$$U(t, X)=\sup _{\delta_t \in \mathcal{A}(t, X)}\left\{\mathbb{E}^{t, X}\left[\int_t^\theta L\left(s, X_s, \delta_s\right) d s+U\left(\theta,X_\theta\right)\right]\right\}$$
+$$U(t, X) = \sup_{\delta_t \in \mathcal{A}(t, X)} \{ \mathbb{E}^{t, X} \left[ \int_t^\theta L(s, X_s, \delta_s) \, ds + U(\theta, X_\theta) \right] \}$$
+
 And applying Ito's lemma, we get the resultant HJB:
+<div align="center">
+<img src="https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/9e677ddf-383f-4da1-b138-cad19f3e941a" width="600" height="auto">
+</div>
 
-$$
-\begin{align*}
-0= & V_t(t, q, \nu, X, S)+\frac{1}{2} \nu V_{S S}(t, q, \nu, X, S)+\theta(\alpha-\nu) V_\nu(t, q, \nu, X, S) \\
-& +\frac{1}{2} \xi^2 \nu V_{\nu \nu}(t, q, \nu, X, S)+\rho \xi \nu V_{S \nu}(t, q, \nu, X, S) \\
-& +\mathbf{1}_{q<Q} \sup _{\delta_t^b}\left[\left[V\left(t, q+1, \nu+d \nu, X-S+\delta^b, S\right)-V(t, q, \nu, X, S)\right] \Lambda^b\left(\delta_t^b\right)\right], \\
-& +\mathbf{1}_{q>-Q} \sup _{\delta_t^a}\left[\left[V\left(t, q-1, \nu+d \nu, X+S+\delta^a, S\right)-V(t, q, \nu, X, S)\right] \Lambda^a\left(\delta_t^a\right)\right],
-\end{align}
-$$
+with terminal condition, $V(T, q, \nu, X, S)=-e^{-\gamma(X+q S-\kappa q^2)}$
 
-with terminal condition,
-$$V(T, q, \nu, X, S)=-\exp (-\gamma(X+q S-l(|q|))) \text {. }$$
+To reduce the dimensions, we use the ansatz solution:
+$$V(t, q, \nu, X, S)=-e^{-\gamma(X+q S)} U(t, q, \nu)$$
+which gives the resultant HJB:
+<div align="center">
+<img src="https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/f62b2022-cce2-4fe9-b7f1-ba0c400c41a8" width="600" height="auto">
+</div>
+
 
 The optimal bid and ask spreads was calibrated to be:
 
