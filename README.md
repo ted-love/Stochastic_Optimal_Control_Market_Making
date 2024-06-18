@@ -1,6 +1,8 @@
 # Stochastic_Optimal_Control_Market_Making
 
-The limit order book (LOB) for Amazon over a 1-day period was used to calibrate a market making algorithm. The optimal bid-ask spread was calculated using Hamiltonian-Jacobian-Bellman (HJB) equation where the diffusion of the stock price was stochastic volatility with 0 drift. That is:
+The limit order book (LOB) containing high-frequency data for Amazon over a 1-day period was used to calibrate a market making algorithm. To remove the noise of the high-frequency data and get an accurate measure of the running volatility, the two-scaled realized volatility (TSRV) subsampling technique was used. 
+
+The optimal bid-ask spread was calculated using Hamiltonian-Jacobian-Bellman (HJB) equation where the diffusion of the stock price was stochastic volatility with 0 drift. That is:
 $$dS_t = \sqrt{\nu_t} dW_t$$
 $$d\nu_t = \kappa(\bar{\nu} - \nu_t)dt + \eta \sqrt{\nu_t}dB_t$$
 where $W_t$ and $B_t$ are brownian motions with correlation $\rho$.
@@ -31,7 +33,7 @@ which gives the resultant HJB:
 <img src="https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/f62b2022-cce2-4fe9-b7f1-ba0c400c41a8" width="600" height="auto">
 </div>
 
-The optimal bid and ask spreads was calibrated to be:
+To solve the HJB PDE, the Thomas Algorithm was implemented, and the optimal bid and ask spreads were calibrated to be:
 
 ![newplot (14)](https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/902390e6-c98a-4a7a-b053-a6a466a88bf1)
 ![newplot (15)](https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/e6370f95-5225-4acb-8d3b-d3654c60364e)
