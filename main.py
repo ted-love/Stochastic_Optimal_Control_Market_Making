@@ -201,10 +201,10 @@ def solve_optimal_bid_ask(A_ask,A_bid,kappa_ask,kappa_bid,alpha,gamma,q_min,q_ma
 
 
 
-order_book = pd.read_csv('AMZN_2012-06-21_34200000_57600000_message_10.csv',
+order_book = pd.read_csv('Data/AMZN_2012-06-21_34200000_57600000_message_10.csv',
                               names=['time','type','ID','size','price','direction'],index_col=['time'])
 
-LOB_spread = pd.read_csv('AMZN_2012-06-21_34200000_57600000_orderbook_10.csv',header=None)
+LOB_spread = pd.read_csv('Data/AMZN_2012-06-21_34200000_57600000_orderbook_10.csv',header=None)
 
 
 
