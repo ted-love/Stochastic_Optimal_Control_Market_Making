@@ -31,7 +31,6 @@ which gives the resultant HJB:
 <img src="https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/f62b2022-cce2-4fe9-b7f1-ba0c400c41a8" width="600" height="auto">
 </div>
 
-
 The optimal bid and ask spreads was calibrated to be:
 
 ![newplot (14)](https://github.com/ted-love/Stochastic_Optimal_Control_Market_Making/assets/46618315/902390e6-c98a-4a7a-b053-a6a466a88bf1)
