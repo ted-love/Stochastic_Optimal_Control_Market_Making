@@ -10,7 +10,7 @@ where $N_t$ is a poisson random variable given by the arrival of the market orde
 
 The utility function used was:
 $$
-\mathbb{E}\left[-e^{-\gamma\left(X_T+q_T S_T-l\left(\left|q_T\right|\right)\right)}\right]
+E\left[-e^{-\gamma\left(X_T+q_T S_T-l\left(\left|q_T\right|\right)\right)}\right]
 $$
 
 
