@@ -9,7 +9,7 @@ $$dX_t = (S_t + \delta^a)dN_t^a - (S_t - \delta^b)dN_t^b$$
 where $N_t$ is a poisson random variable given by the arrival of the market orders (MO).
 
 The utility function used was:
-$$\mathbb{E}\left[-e^{-\gamma\left(X_T+q_T S_T-l\left(\left|q_T\right|\right)\right)}\right]$$
+$$\mathbb{E}\left[-e^{-\gamma\left(X_T+q_T S_T-lq_T^2\right)}\right]$$
 
 
 The optimal bid and ask spreads are given by
